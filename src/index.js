@@ -2,10 +2,10 @@ import React, { useMemo } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import FirebaseContext from './context/firebase';
-import { firebase } from './lib/firebase';
+import { firebase, FieldValue } from './lib/firebase';
 
 function FireBaseWrapper() {
-  const fireBaseProviderValue = useMemo(() => ({ firebase }), [firebase]);
+  const fireBaseProviderValue = useMemo(() => ({ firebase, FieldValue }), [firebase, FieldValue]);
 
   return (
     <FirebaseContext.Provider value={fireBaseProviderValue}>
