@@ -1,44 +1,46 @@
 module.exports = {
+  extends: ['airbnb', 'prettier', 'plugin:jsx-a11y/recommended', 'plugin:react-hooks/recommended'],
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 8,
+    ecmaFeatures: {
+      experimentalObjectRestSpread: true,
+      impliedStrict: true,
+      classes: true,
+    },
+  },
   env: {
     browser: true,
-    es2021: true,
     node: true,
-    jest: true
+    jquery: true,
+    jest: true,
   },
-  extends: ['airbnb', 'prettier'],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    },
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-  },
-  plugins: ['prettier'],
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
     'no-debugger': 0,
     'no-alert': 0,
     'no-unused-vars': 1,
     'prefer-const': [
       'error',
       {
-        destructuring: 'all'
-      }
+        destructuring: 'all',
+      },
     ],
     'arrow-body-style': [2, 'as-needed'],
     'no-unused-expressions': [
       2,
       {
-        allowTaggedTemplates: true
-      }
+        allowTaggedTemplates: true,
+      },
     ],
     'no-param-reassign': [
       2,
       {
-        props: false
-      }
+        props: false,
+      },
     ],
     'no-console': 0,
-    'import/prefer-default-export': 0,
+    'import/prefer-default-export': 1,
     import: 0,
     'func-names': 0,
     'space-before-function-paren': 0,
@@ -59,8 +61,8 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.js', '.jsx']
-      }
+        extensions: ['.js', '.jsx'],
+      },
     ],
     radix: 0,
     'no-shadow': 'off',
@@ -69,23 +71,24 @@ module.exports = {
       'single',
       {
         avoidEscape: true,
-        allowTemplateLiterals: true
-      }
+        allowTemplateLiterals: true,
+      },
     ],
     'prettier/prettier': [
       'error',
       {
-        trailingComma: 'none',
+        trailingComma: 'es5',
         singleQuote: true,
-        printWidth: 100
-      }
+        printWidth: 100,
+      },
     ],
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': [
       'warn',
       {
-        aspects: ['invalidHref']
-      }
-    ]
-  }
+        aspects: ['invalidHref'],
+      },
+    ],
+  },
+  plugins: ['prettier', 'react', 'react-hooks'],
 };
