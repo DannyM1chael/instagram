@@ -13,7 +13,7 @@ const NotFound = lazy(() => import('./pages/not-found'));
 function App() {
   const { user } = useAuthListener();
   return (
-    <UserContext value={{ user }}>
+    <UserContext.Provider value={{ user }}>
       <Router>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
@@ -24,7 +24,7 @@ function App() {
           </Switch>
         </Suspense>
       </Router>
-    </UserContext>
+    </UserContext.Provider>
   );
 }
 
