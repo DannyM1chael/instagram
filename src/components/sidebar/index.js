@@ -4,13 +4,13 @@ import Suggestions from './suggestions';
 
 export default function Index() {
   const {
-    user: { fullName, username, userId },
+    user: { fullName, username, userId, following },
   } = useUser();
 
   return (
     <div className="p-4">
       <User username={username} fullName={fullName} />
-      <Suggestions />
+      <Suggestions userId={userId} following={following} />
     </div>
   );
 }
